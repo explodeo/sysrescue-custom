@@ -1,0 +1,7 @@
+**.Trash-0
+***.iso
+**.sha512
+extracted-iso/**
+output-dir/**
+srm-dir/**
+work-dir/**

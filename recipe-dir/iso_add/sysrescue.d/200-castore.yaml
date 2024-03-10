@@ -1,0 +1,7 @@
+---
+# sysconfig:
+#     ca-trust:
+#         # ca-name: |
+#         #   CERTIFICATE CONTENTS
+#     hosts:
+#         # HOSTS FILE HERE #

@@ -1,0 +1,2 @@
+#!/bin/bash
+picocom -b $1 -d 8 -y n -p 1 /dev/ttyS0

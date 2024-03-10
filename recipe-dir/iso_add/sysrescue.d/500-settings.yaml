@@ -1,0 +1,7 @@
+---
+global:
+    copytoram: true
+    dostartx: true
+    loadsrm: true
+    setkmap: us
+    # rootcryptpass: "CHANGEME-PASSWORD"
