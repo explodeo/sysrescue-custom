@@ -5,3 +5,4 @@ global:
     loadsrm: true
     setkmap: us
     # rootcryptpass: "CHANGEME-PASSWORD"
+    

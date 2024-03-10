@@ -3,5 +3,4 @@
 #     ca-trust:
 #         # ca-name: |
 #         #   CERTIFICATE CONTENTS
-#     hosts:
-#         # HOSTS FILE HERE #
+# Do not use the "hosts" key. modify the srm-source/etc/hosts file instead
