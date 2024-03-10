@@ -1,7 +1,15 @@
-**.Trash-0
-***.iso
+**.iso
 **.sha512
+
+!extracted-iso/.placeholder
+!output-dir/.placeholder
+!srm-dir/.placeholder
+!work-dir/.placeholder
+
+# exclude everything in these but not the folders themselves
 extracted-iso/**
 output-dir/**
 srm-dir/**
 work-dir/**
+
+
