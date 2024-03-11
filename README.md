@@ -19,27 +19,27 @@ Please support the official developers.
 This repository uses the `build-sysrescue-iso` script which reduces the number of commands you have to write to build SRMs or customizations into the SysRescue image. 
 
 This repo uses the following structure which holds the minimum necessary files/directories to make the build script work: 
-- `SYSRESCUE.iso`: The SystemRescue ISO you want to customize
-- `SYSRESCUE.iso.sha512`: A SHA512 hash used to verify the SystemRescue ISO
-- `extracted-iso`: Empty directory which should be used if you are building using the manual process
-- `output-dir`: The default directory for storing an output custom SystemRescue ISO 
-- `preprocessing`: directory containing bash scripts for modifying variables using the `CHANGEME` prefix in configurations and scripts
-    - `custom`: A file which contains default values for all `CHANGEME` instances
-    - `defaults`: A file which contains custom values for all `CHANGEME` instances (overwrites default configs)
-- `srm-dir`: A directory used **in manual mode** to store SRMs built from the `srm-source` directory.
-- `work-dir`: A directory used by the `sysrescue-customize` script for temporary files
-- `recipe-dir`: Directory containing an automated build "recipe" per the SystemRescue official docs.
-    - `iso_delete`: Contains paths to dirs/files to delete. For example, put `.ssh` to recursively delete all `.ssh` folders in the iso. Use full paths if possible.
-    - `iso_add`: Directory containing files/dirs to copy or overwrite in the ISO image. Currently limited to `sysrescue.d` and `autorun`. Use SRMs to modify folders like `/opt`
-        - `autorun`: Directory containing autorun scripts once the ISO boots. Scripts in this folder can be named anything. 
-          - `autorun1`: An example autorun script that sets the IP, hostname, and assigns a new root SSH key on boot. `Preprocessing` may be used to change these.
-        - `sysrescue.d`: Directory containing YAML files (must use the `.yaml` extension) which overwrites the default SystemRescue configuration.  
-            - `500-settings.yaml`: An example YAML file that causes SRMs to load, sets a US keyboard, and sets the DVD to boot into RAM with the GUI up. `Preprocessing` will cause a root password to be set here
-    - `iso_patch_and_script`: Directory containing files to patch and scripts to run. Refer to the [Official Docs](https://www.system-rescue.org/scripts/sysrescue-customize/) on how to do this.
-    - `build_into_srm`: The directory containing SRMs built from the `srm-source` directory.
-- `srm-source`: Directory used by the automation script containing files to build into SRMs
-    - `packages`: Directory containing a file structure used to store Pacman packages for updating the ISO. ***THIS IS NOT YET SUPPORTED VIA AUTOMATION***
-    - `static`: Directory containing the file structure for files/plugins/scripts to add or overwrite in the booted file system. This directory acts as the `/` directory in a squashfs.
+- **`SYSRESCUE.iso`**: The SystemRescue ISO you want to customize
+- **`SYSRESCUE.iso.sha512`**: A SHA512 hash used to verify the SystemRescue ISO
+- **`extracted-iso`**: Empty directory which should be used if you are building using the manual process
+- **`output-dir`**: The default directory for storing an output custom SystemRescue ISO 
+- **`preprocessing`**: directory containing bash scripts for modifying variables using the `CHANGEME` prefix in configurations and scripts
+    - **`custom`**: A file which contains default values for all `CHANGEME` instances
+    - **`defaults`**: A file which contains custom values for all `CHANGEME` instances (overwrites default configs)
+- **`srm-dir`**: A directory used **in manual mode** to store SRMs built from the `srm-source` directory.
+- **`work-dir`**: A directory used by the `sysrescue-customize` script for temporary files
+- **`recipe-dir`**: Directory containing an automated build "recipe" per the SystemRescue official docs.
+    - **`iso_delete`**: Contains paths to dirs/files to delete. For example, put `.ssh` to recursively delete all `.ssh` folders in the iso. Use full paths if possible.
+    - **`iso_add`**: Directory containing files/dirs to copy or overwrite in the ISO image. Currently limited to `sysrescue.d` and `autorun`. Use SRMs to modify folders like `/opt`
+        - **`autorun`**: Directory containing autorun scripts once the ISO boots. Scripts in this folder can be named anything. 
+          - **`autorun1`**: An example autorun script that sets the IP, hostname, and assigns a new root SSH key on boot. `Preprocessing` may be used to change these.
+        - **`sysrescue.d`**: Directory containing YAML files (must use the `.yaml` extension) which overwrites the default SystemRescue configuration.  
+            - **`500-settings.yaml`**: An example YAML file that causes SRMs to load, sets a US keyboard, and sets the DVD to boot into RAM with the GUI up. `Preprocessing` will cause a root password to be set here
+    - **`iso_patch_and_script`**: Directory containing files to patch and scripts to run. Refer to the [Official Docs](https://www.system-rescue.org/scripts/sysrescue-customize/) on how to do this.
+    - **`build_into_srm`**: The directory containing SRMs built from the `srm-source` directory.
+- **`srm-source`**: Directory used by the automation script containing files to build into SRMs
+    - **`packages`**: Directory containing a file structure used to store Pacman packages for updating the ISO. ***THIS IS NOT YET SUPPORTED VIA AUTOMATION***
+    - **`static`**: Directory containing the file structure for files/plugins/scripts to add or overwrite in the booted file system. This directory acts as the `/` directory in a squashfs.
 
 ### Customizing SRMs
 
